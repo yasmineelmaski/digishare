@@ -1,0 +1,194 @@
+openapi: 3.0.0
+info:
+  title: Digishare Docs
+  description: |
+    # Generate a Personal Access Token
+    A personal access token is a unique code that allows you to authenticate and access certain resources on the itinarea.com website. Before you can generate a personal access token, you must have a registered account on the website.
+
+    To generate a personal access token:
+    1. Go to the personal access token creation page by clicking this link: [https://app.digishare.ma/personal-access-tokens/create](https://app.digishare.ma/personal-access-tokens/create).
+    2. If prompted, log in to your account.
+    3. Enter a name for your token in the "Token name" field.
+    4. Select the permissions that you want the token to have.
+    5. Click the "Create" button.
+    6. A personal access token will be generated and displayed on the screen. 
+
+    Important: Treat your personal access token like a password.
+
+    # Digishare Webhooks (Campaigns)
+    ⚠️ you can activate it by adding **`"notify_webhooks" : true`** inside **`"contacts_and_data"`** campaign object.
+
+  version: 1.0.0
+servers:
+  - url: '{{api_url}}'
+
+paths:
+  /campaigns:
+    get:
+      tags:
+        - Campaign
+      summary: List campaigns
+      description: ''
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+    post:
+      tags:
+        - Campaign
+      summary: Create a campaign
+      description: ''
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /campaigns/{campaignId}:
+    get:
+      tags:
+        - Campaign
+      summary: Show campaign details
+      description: ''
+      parameters:
+        - name: campaignId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /campaigns/{campaignId}/retry-failed-messages:
+    post:
+      tags:
+        - Campaign
+      summary: Retry failed messages for a campaign
+      description: ''
+      parameters:
+        - name: campaignId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /tickets:
+    get:
+      tags:
+        - Ticket
+      summary: List tickets
+      description: ''
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+    post:
+      tags:
+        - Ticket
+      summary: Create a ticket
+      description: ''
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+    patch:
+      tags:
+        - Ticket
+      summary: Update a ticket
+      description: ''
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /tickets/{ticketId}:
+    get:
+      tags:
+        - Ticket
+      summary: Show ticket details
+      description: ''
+      parameters:
+        - name: ticketId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /user/profile:
+    get:
+      tags:
+        - Authentication
+      summary: Get authenticated user profile
+      description: ''
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /oauth/scopes:
+    get:
+      tags:
+        - Authentication
+      summary: Get OAuth token scopes
+      description: ''
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /oauth/personal-access-tokens:
+    get:
+      tags:
+        - Authentication
+      summary: Get personal access tokens
+      description: ''
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+
+components:
+  schemas:
+    # Define your schemas here if needed

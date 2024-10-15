@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div class="sidebar">
       <ul>
         <li><router-link to="/introduction">Introduction</router-link></li>
@@ -20,30 +20,12 @@
   </script>
   
   <style scoped>
-  .sidebar {
-    width: 250px;
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-right: 1px solid #ddd;
-  }
-  
-  .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .sidebar li {
-    margin-bottom: 10px;
-  }
-  
-  .sidebar a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .sidebar a.active {
-    font-weight: bold;
-    color: #007bff;
-  }
-  </style>
-  
+
+
+
+
+
+
+
+</style>
+   -->
